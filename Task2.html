@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Task2 </title>
+</head>
+
+
+
+
+
+<body>
+    <p> 2 </p>
+<script>
+
+function getSeason(month) {
+    if (isNaN(month)) {
+        month = month.trim().toLowerCase();
+        const monthsToSeasons = {
+            'грудень': 'зима',
+            'січень': 'зима',
+            'лютий': 'зима',
+            'березень': 'весна',
+            'квітень': 'весна',
+            'травень': 'весна',
+            'червень': 'літо',
+            'липень': 'літо',
+            'серпень': 'літо',
+            'вересень': 'осінь',
+            'жовтень': 'осінь',
+            'листопад': 'осінь'
+        };
+        if (monthsToSeasons.hasOwnProperty(month)) {
+            return monthsToSeasons[month];
+        } else {
+            return 'Неправильно введений місяць';
+        }
+    } else {
+        if (month >= 1 && month <= 12) {
+            switch (month) {
+                case 12:
+                case 1:
+                case 2:
+                    return 'зима';
+                case 3:
+                case 4:
+                case 5:
+                    return 'весна';
+                case 6:
+                case 7:
+                case 8:
+                    return 'літо';
+                case 9:
+                case 10:
+                case 11:
+                    return 'осінь';
+            }
+        } else {
+            return 'Неправильно введене число місяця';
+        }
+    }
+}
+
+let month1 = 5;
+var isMonth1 = getSeason(month1);
+alert(`${month1} э ${isMonth1}`);
+
+var month2 = 'лютий';
+var isMonth2 = getSeason(month2);
+alert(`${month2} э ${isMonth2}`);
+
+</script>
+</body>

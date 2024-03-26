@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Task3 </title>
+</head>
+
+
+
+
+
+<body>
+    <p> 3 </p>
+<script>
+
+function generateRandomArray(length, min, max) {
+    const randomArray = [];
+    for (let i = 0; i < length; i++) {
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        randomArray.push(randomNumber);
+    }
+    return randomArray;
+}
+
+function filterElement(arr) {
+    if (arr.length === 0) {
+        return [];
+    }
+
+    const firstElement = arr[0];
+    const result = arr.filter(number => number > firstElement);
+    return result;
+}
+
+const randomArray = generateRandomArray(10, 1, 100);
+alert(`Випадково згенерований масив ${randomArray}`); 
+
+const newArray = filterElement(randomArray);
+alert(`Профільтрований масив в якому всі елементи більше за ${randomArray[0]} - ${newArray}`); 
+
+</script>
+</body>
